@@ -1,0 +1,23 @@
+---
+title: "01-getting-started"
+author: "sonnyrussell"
+date: "2026-01-27"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+This semester, I plan to use some of the data I will use for my dissertation which includes data from two Networks in the US across between 7 and 9 sites. The data I will be tidying and exploring is data from parent reports on executive function and mental health in a cohort that is about half autistic and sex balanced. Because the ages of participants vary, some of the data is a little messy. 
+```{r}
+library(workflowr)
+
+
+data <- read.csv("data/govdata.csv")
+
+
+str(data)
+```
+
+```
+
