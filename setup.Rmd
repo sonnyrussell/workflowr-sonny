@@ -1,0 +1,46 @@
+---
+title: "workflowr"
+output: html_document
+date: "2026-01-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+wflow_open("analysis/01-getting-started.Rmd")
+```
+
+getwd()
+This semester, I plan to use some of the data I will use for my dissertation which includes data from two Networks in the US across between 7 and 9 sites. The data I will be tidying and exploring is data from parent reports on executive function and mental health in a cohort that is about half autistic and sex balanced. Because the ages of participants vary, some of the data is a little messy. 
+```{r}
+library(workflowr)
+
+
+data <- read.csv("data/govdata.csv")
+
+
+str(data)
+
+```
+Build site 
+```{r}
+wflow_build("analysis/01-getting-started.Rmd") # build only one script
+wflow_build() # build the whole site
+wflow_status() # check the build status
+
+wflow_publish("analysis/01-getting-started.Rmd", message = "Add initial analysis page") # committing your work to the repository
+
+wflow_publish("analysis/_site.yml") # committing your work to the repository
+
+wflow_publish("analysis/index.Rmd", message = "Add initial analysis page") # committing your work to the repository
+
+wflow_publish("analysis/about.Rmd", message = "Add initial analysis page") # committing your work to the repository
+
+wflow_publish("analysis/license.Rmd", message = "Add initial analysis page") # committing your work to the repository
+
+wflow_use_github("sonnyrussell")
+
+wflow_git_push()
+wflow_status()
+```
+
