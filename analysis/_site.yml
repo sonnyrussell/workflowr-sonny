@@ -9,6 +9,8 @@ navbar:
     href: about.html
   - text: License
     href: license.html
+  - text: Getting Started
+    href: 01-getting-started/html
   right:
   - icon: fab fa-github
     text: Source code
